@@ -1,0 +1,202 @@
+@use '../abstracts' as a;
+
+// * {
+//     border: 1px solid;
+// }
+
+body {
+    color: a.$primary-color;
+}
+
+#hero-section {
+    position: relative;
+    height: 360px;
+    margin: 80px 0;
+    background-color: a.$secondary-color;
+    z-index: 5;
+    box-shadow: 0 40px 40px a.$light-highlight-color;
+}
+
+#name-main {
+    font-size: 220px;
+    text-align: center;
+    position: relative;
+    top: 0;
+    left: auto;
+}
+
+#lname-main {
+    font-size: 220px;
+    text-align: center;
+    position: relative;
+    top: 80px;
+    background-color: a.$secondary-color;
+    padding: 80px;
+}
+
+.slider-con {
+    position: relative;
+    top: 70px;
+    background-color: a.$secondary-color;
+    transform: rotate(-5deg);
+}
+
+.slider {
+    position: absolute;
+    white-space: nowrap;
+    display: flex;
+}
+
+.slider p {
+    margin: 0px;
+    font-size: 100px;
+    font-weight: a.$semibold-font-weight;
+    padding: 45px 0px 45px 35px;
+    background-color: a.$secondary-color;
+    box-shadow: 40px 20px 40px a.$light-highlight-color;
+}
+
+.slider p:nth-of-type(2) {
+    position: absolute;
+    left: 100%;
+}
+
+.hero-text-con {
+    position: absolute;
+    top: 0;
+    height: 2000px;
+    font-size: a.$big-font-size;
+    line-height: 28px;
+}
+
+.hero-text-con-1 {
+    position: absolute;
+    height: 2000px;
+    top: 340px;
+    left: 240px;
+    width: 620px;
+}
+
+.hero-text-con-2 {
+    position: absolute;
+    height: 2000px;
+    top: 490px;
+    left: 450px;
+    width: 600px;
+}
+
+#work-section {
+    background-color: a.$primary-color;
+    color: a.$secondary-color;
+    padding-top: 60px;
+    padding-bottom: 120px;
+    margin-bottom: 160px;
+    margin-top: 380px;
+    position: relative;
+    box-shadow: 0 40px 40px a.$light-highlight-color;
+    z-index: 2;
+}
+
+#work-section video {
+    width: 100%;
+}
+
+#logo-icon-ca {
+    margin: 60px auto;
+    max-width: 180px;
+    min-width: 130px;
+}
+
+.titles-main {
+    margin: 60px 0 120px;
+    text-align: center;
+    font-size: a.$huge-font-size;
+    font-weight: a.$light-font-weight;
+}
+
+.main-work-title {
+    font-size: a.$huge-font-size;
+    font-weight: a.$light-font-weight;
+    line-height: 70px;
+}
+
+#studyCases-main {
+    height: 120px;
+    align-content: center;
+}
+
+#projects-section {
+    margin: 100px 20px;
+}
+
+.arrow-down {
+    margin: auto;
+    max-height: 70px;
+    margin-bottom: 60px;
+}
+
+.arrow-left-right {
+    max-width: 320px;
+    margin: 40px auto;
+}
+
+.text-goal p {
+    margin-bottom: 50px;
+}
+
+.text-project div {
+    margin-bottom: 50px;
+}
+
+#ref-main {
+    margin: 0px 20px;
+    line-height: 20px;
+    position: relative;
+    background-color: a.$secondary-color;
+    z-index: 1;
+}
+
+#ref-main div {
+    margin-bottom: 50px;
+}
+
+.ref-name {
+    margin-top: 8px;
+    font-size: a.$small-font-size;
+    font-weight: a.$semibold-font-weight;
+}
+
+.ref-title {
+    margin-left: 8px;
+    font-size: a.$tiny-font-size;
+    font-weight: a.$regular-font-weight;
+}
+
+@media screen and (min-width: 768px) {
+
+    #hero-section {
+        margin: 160px auto;
+    }
+    
+    #logo-icon-ca {
+        margin: auto;
+    }
+
+    #arrow-down {
+        margin: 0;
+    }
+
+    #projects-section {
+        margin: 100px auto;
+    }
+
+    #work-section {
+        padding-bottom: 120px;
+    }
+
+    .text-goal p {
+        font-size: a.$small-font-size;
+        margin-bottom: 50px;
+        padding-right: 40px;
+    }
+}
