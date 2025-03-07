@@ -1,9 +1,8 @@
 @use '../abstracts' as a;
 
 #contact-main {
-    margin: 90px 90px;
-    padding-top: 200px;
-    padding-bottom: 200px;
+    margin: 90px auto 0;
+    padding: 120px 20px;
     position: relative;
     background-color: a.$secondary-color;
     box-shadow: 0 -10px 60px a.$medium-highlight-color;
@@ -70,6 +69,7 @@
 
     #contact-main {
         margin: 0 auto;
+        padding: 160px;
     }
 
     #contact-text {

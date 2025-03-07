@@ -6,8 +6,8 @@ nav, ul, li, a, button {
 
 #sticky-nav-con {
     position: relative;
+    margin: 40px auto;
     top: 0;
-    left: 50%;
     z-index: 20;
 }
 
@@ -33,7 +33,7 @@ nav, ul, li, a, button {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: left;
+    align-items: right;
     background-color: a.$primary-color;
 }
 
@@ -42,6 +42,14 @@ nav, ul, li, a, button {
 }
 
 @media screen and (min-width: 768px) {
+
+    #sticky-nav-con {
+        position: relative;
+        top: 0;
+        left: 50%;
+        z-index: 20;
+        margin:30px auto 0;
+    }
 
     #burger-con {
         display: block;

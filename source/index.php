@@ -16,7 +16,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script defer src="js/ScrollSmoother.min.js"></script>
-  <script defer src="js/main.js"></script>
+  <script type="module" defer src="js/main.js"></script>
   <title>Carlos Cano Portfolio</title>
 </head>
 
@@ -51,13 +51,12 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
           </div>
         </section>
 
-        <section class="grid-con">
+        <section class="hero-text-section grid-con">
           <div class="hero-text-con col-span-full">
-            <div class="hero-text-con-1 m-col-start-3 m-col-end-6">
-              <p>Hi, I’m Carlos, a web developer living in Canada. The "CA" in my portfolio name stands for both my initials and Canada, where I’m currently crafting websites — a fun little coincidence!</p>
-            </div>
-            <div class="hero-text-con-2" >
-              <p>Coming from a graphic design background, I’ve shifted my focus to front-end development, creating dynamic and visually appealing websites.</p>
+            <div class="hero-text-con-1 col-span-full">
+              <p>I’m a front-end web developer and designer, but what makes me shine above others is that I’m a wannabe unicorn!</p>
+              <p>Let me explain myself. I have a background in graphic design and knowledge of UX design, and I’m pretty good at motion design, photo and video editing, and 3D (who really knows when this knowledge will be helpful, especially when making webpages, right?).</p>
+              <p>What I really want to say is that my super power is to adapt and there is nothing I can’t learn, even if the environment is hostile, ask my wife.</p>
             </div>
           </div>
           <img src="images/arrow-down.svg" class="arrow-down col-span-full m-col-span-1" data-lag="1.3">
@@ -144,10 +143,10 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </section>
 
         <section id="contact-main" data-speed="1.2">
-          <h2 class="titles-main col-span-full">CONTACT</h2>
-          <div class="grid-con">
-            <h2 class="col-span-full">Share your brilliant idea!</h2>
-            <div id="contact-hero-form" class="col-span-full m-col-start-1 m-col-end-8">
+          <h2 class="titles-main">CONTACT</h2>
+          <div class="full-width-grid-con">
+            <div id="contact-hero-form" class="col-span-full m-col-start-2 m-col-end-8">
+              <h2 class="col-span-full">Share your brilliant idea!</h2>
               <form id="contact_form">
                 <input name="name" type="text" placeholder="Name">
                 <input name="email" type="email" placeholder="Email">
@@ -157,7 +156,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
               </form>
             </div>
 
-            <div id="contact-text" class="col-span-full m-col-start-8 m-col-end-13">
+            <div id="contact-text" class="col-span-full m-col-start-8 m-col-end-12">
               <p>Here you can check more details of my background<br>
               <a href="https://www.linkedin.com/in/carlos-cano-m/" target="_blank">LinkedIn</a></p>
             </div>
