@@ -60,9 +60,10 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
     let menuStatic = ScrollTrigger.create({
         trigger: "#sticky-nav-con",
-        pin: "#main-nav",
         start: "top top",
-        end: "+=10000",
+        end: "bottom bottom",
+        pin: true,
+        pin
     });
 
     let st1 = ScrollTrigger.create({
