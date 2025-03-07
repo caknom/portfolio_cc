@@ -146,14 +146,14 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <section id="contact-main" data-speed="1.2">
           <h2 class="titles-main col-span-full">CONTACT</h2>
           <div class="grid-con">
-            <h2 class="col-span-full">Share your brillant idea!</h2>
+            <h2 class="col-span-full">Share your brilliant idea!</h2>
             <div id="contact-hero-form" class="col-span-full m-col-start-1 m-col-end-8">
               <form id="contact_form">
-                  <input id="name" type="text">
-                  <input id="email" type="email">
-                  <textarea id="msg" placeholder="Message"></textarea>
-                  <input id="submit" type="submit" value="Send me a message">
-                  <section id="feedback"><p>*Please fill out all required sections</p></section>
+                <input name="name" type="text" placeholder="Name">
+                <input name="email" type="email" placeholder="Email">
+                <textarea name="msg" placeholder="Message"></textarea>
+                <input type="submit" value="Send me a message">
+                <section id="feedback"><p>*Please fill out all required sections</p></section>
               </form>
             </div>
 
