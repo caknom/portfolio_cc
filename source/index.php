@@ -148,11 +148,12 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
           <div class="grid-con">
             <h2 class="col-span-full">Share your brillant idea!</h2>
             <div id="contact-hero-form" class="col-span-full m-col-start-1 m-col-end-8">
-              <form action="#" method="post" enctype="text/plain">
-                  <input name="fullName" type="text" required placeholder="Name">
-                  <input name="contactInfo" type="email" required placeholder="Email">
-                  <textarea name="msg" placeholder="Message"></textarea>
-                  <input name="submit" type="submit" value="Send me a message">
+              <form id="contact_form">
+                  <input id="name" type="text">
+                  <input id="email" type="email">
+                  <textarea id="msg" placeholder="Message"></textarea>
+                  <input id="submit" type="submit" value="Send me a message">
+                  <section id="feedback"><p>*Please fill out all required sections</p></section>
               </form>
             </div>
 

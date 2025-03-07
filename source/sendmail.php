@@ -1,62 +1,44 @@
 <?php
+    header("Access-Control-Allow-Origin: *");
+    header("Content-Type: application/json; charset=UTF-8");
 
-require_once('includes/connect.php');
+    $db_host = 'localhost';
+    $db_user = 'root';
+    $db_pass = '';
+    $db_name = 'portfolio';
 
-$name = $_POST['name'];
-$email = $_POST['email'];
-$msg = $_POST['message'];
+    $connection = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+    $errors = array();
 
-$errors = [];
+    $name = mysqli_real_escape_string($connection, $_POST['name']);
+    if ($name == NULL) {
+        $errors[] = "First name field is empty.";
+    }
 
-$name = trim($name);
-$email = trim($email);
-$msg = trim($msg);
+    $email = $_POST['email'];
+    if ($email == NULL) {
+        $errors[] = "Email field is empty.";
+    }
 
-if(empty($name)) {
-    $errors['name'] = 'Please, enter your name';
-}
-if(empty($msg)) {
-    $errors['comments'] = 'Don\'t forget to leave a message';
-}
-if(empty($email)) {
-    $errors['email'] = 'An email is required to contact you';
-} else if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errors['legit_email'] = 'I need a valid email address to contact you';
-}
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "\"" . $email . "\" is not a valid email address.";
+    }
 
-if(empty($errors)) {
+    $msg = $_POST['msg'];
+    if ($email == NULL) {
+        $errors[] = "Message is empty.";
+    }
 
-    $query = "INSERT INTO contact_form (name, email, message) VALUES(:name, :email, :message)";
-
-    $stmt = $connect->prepare($query);
-    $stmt->bindParam(':name', $name);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':message', $msg);
-
-
-    if ($stmt->execute()) {
-        $to = 'caknom@gmail.com';
-        $subject = 'New Message from my Site';
-        $message = "Name: " . $name . "\n";
-        $message .= "Email: " . $email . "\n";
-        $message .= "Message: " . $msg . "\n";
-
-        mail($to, $subject, $message);
-
-        $_SESSION['message_sent'] = true;
-        header('Location: thank_you.php');
-        exit();
+    $errcount = count($errors);
+    if ($errcount > 0) {
+        $errmsg = array();
+        for ($i = 0; $i < $errcount; $i++) {
+            $errmsg[] = $errors[$i];
+        }
+        echo json_encode(array("errors" => $errmsg));
     } else {
-        echo 'I\'m sorry, there was a problem. Please try again.';
+        $querystring = "INSERT INTO contact_form(id,name,email,message) VALUES(NULL,'" . $name . "','" . $email . "','" . $msg . "')";
+        $qpartner = mysqli_query($connection, $querystring);
+        echo json_encode(array("message" => "Form submitted. Thank you for your interest!"));
     }
-
-    $stmt->close();
-} else {
-    foreach ($errors as $error) {
-        echo $error . '<br>';
-    }
-}
-
-$connect = null;
-
 ?>
