@@ -7,10 +7,10 @@
     $db_pass = '';
     $db_name = 'portfolio';
 
-    $connection = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
+    $connect = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
     $errors = array();
 
-    $name = mysqli_real_escape_string($connection, $_POST['name']);
+    $name = mysqli_real_escape_string($connect, $_POST['name']);
     if ($name == NULL) {
         $errors[] = "First name field is empty.";
     }
@@ -38,7 +38,7 @@
         echo json_encode(array("errors" => $errmsg));
     } else {
         $querystring = "INSERT INTO contact_form(id,name,email,message) VALUES(NULL,'" . $name . "','" . $email . "','" . $msg . "')";
-        $qpartner = mysqli_query($connection, $querystring);
+        $qpartner = mysqli_query($connect, $querystring);
         echo json_encode(array("message" => "Form submitted. Thank you for your interest!"));
     }
 ?>

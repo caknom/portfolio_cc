@@ -115,7 +115,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
                 response.errors.forEach(error => {
                     if (error === "name field is empty."){
-                        document.querySelector("#lname").style
+                        document.querySelector("#name").style
                         .backgroundColor = "red";
                     }
                 })

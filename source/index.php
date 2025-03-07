@@ -160,8 +160,6 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div id="contact-text" class="col-span-full m-col-start-8 m-col-end-13">
               <p>Here you can check more details of my background<br>
               <a href="https://www.linkedin.com/in/carlos-cano-m/" target="_blank">LinkedIn</a></p>
-              <p>and here you can send me a direct email<br>
-              <a href="mailto:hello@carloscano.ca" target="_blank">hello@carloscano.ca</a></p>
             </div>
           </div>
         </section>
