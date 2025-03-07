@@ -63,7 +63,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
         start: "top top",
         end: "bottom bottom",
         pin: true,
-        pin
+        pinSpacing: false
     });
 
     let st1 = ScrollTrigger.create({
@@ -91,10 +91,11 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
         const thisform = event.currentTarget;
         const url = "sendmail.php";
         console.log(thisform.elements);
-        const formdata = 
-        "name="+thisform.elements.name.value+
-        "email="+thisform.elements.email.value+
-        "msg="+thisform.elements.msg.value;
+        const formdata = new URLSearchParams({
+            name: thisform.elements.name.value,
+            email: thisform.elements.email.value,
+            msg: thisform.elements.msg.value
+        }).toString();
         console.log(formdata);
         fetch(url, {
             method: "POST",
@@ -106,38 +107,26 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
         .then(response => response.json())
         .then(response => {
             console.log(response);
-            feedback.innerHTML="";
-            if(response.errors){
+            feedback.innerHTML = "";
+            if (response.errors) {
                 response.errors.forEach(error => {
                     const errorElement = document.createElement("p");
                     errorElement.textContent = error;
                     feedback.appendChild(errorElement);
-                })
-
-                response.errors.forEach(error => {
-                    if (error === "name field is empty."){
-                        document.querySelector("#name").style
-                        .backgroundColor = "red";
-                    }
-                })
-
-            } else{
+                });
+            } else {
                 form.reset();
                 const messageElement = document.createElement("p");
                 messageElement.textContent = response.message;
                 feedback.appendChild(messageElement);
             }
-            feedback.scrollIntoView({behavior: 'smooth', block: 'end'});
+            feedback.scrollIntoView({ behavior: 'smooth', block: 'end' });
         })
-        .catch(error=>{
+        .catch(error => {
             console.log(error);
-            feedback.innerHTML = "";
-            feedback.innerHTML = `<p>Sorry there seems to be an issue. 
-            Either your using an older browser or javascript is disabled.</p>`
+            feedback.innerHTML = `<p>Sorry there seems to be an issue. Either you're using an older browser or JavaScript is disabled.</p>`;
         });
-
     }
 
     form.addEventListener("submit", regForm);
-
 })();

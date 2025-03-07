@@ -12,21 +12,21 @@
 
     $name = mysqli_real_escape_string($connect, $_POST['name']);
     if ($name == NULL) {
-        $errors[] = "First name field is empty.";
+        $errors[] = "Name field is empty.";
     }
-
-    $email = $_POST['email'];
+    
+    $email = mysqli_real_escape_string($connect, $_POST['email']);
     if ($email == NULL) {
         $errors[] = "Email field is empty.";
     }
-
+    
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = "\"" . $email . "\" is not a valid email address.";
     }
 
-    $msg = $_POST['msg'];
-    if ($email == NULL) {
-        $errors[] = "Message is empty.";
+    $msg = mysqli_real_escape_string($connect, $_POST['msg']);
+    if ($msg == NULL) {
+        $errors[] = "Message field is empty.";
     }
 
     $errcount = count($errors);
@@ -39,6 +39,6 @@
     } else {
         $querystring = "INSERT INTO contact_form(id,name,email,message) VALUES(NULL,'" . $name . "','" . $email . "','" . $msg . "')";
         $qpartner = mysqli_query($connect, $querystring);
-        echo json_encode(array("message" => "Form submitted. Thank you for your interest!"));
+        echo json_encode(array("message" => "Message sent. Thank you for your interest!"));
     }
 ?>
