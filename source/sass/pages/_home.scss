@@ -10,7 +10,7 @@ body {
 
 #hero-section {
     position: relative;
-    height: 360px;
+    height: 460px;
     margin: 80px 0;
     background-color: a.$secondary-color;
     z-index: 5;
@@ -18,7 +18,9 @@ body {
 }
 
 #name-main {
-    font-size: 220px;
+    font-size: 90px;
+    font-weight: 900;
+    padding-top: 40px;
     text-align: center;
     position: relative;
     top: 0;
@@ -26,17 +28,18 @@ body {
 }
 
 #lname-main {
-    font-size: 220px;
+    font-size: 90px;
+    font-weight: 900;
     text-align: center;
     position: relative;
-    top: 80px;
+    top: 40px;
     background-color: a.$secondary-color;
-    padding: 80px;
+    padding: 40px;
 }
 
 .slider-con {
     position: relative;
-    top: 70px;
+    top: 20px;
     background-color: a.$secondary-color;
     transform: rotate(-5deg);
 }
@@ -49,7 +52,7 @@ body {
 
 .slider p {
     margin: 0px;
-    font-size: 100px;
+    font-size: 60px;
     font-weight: a.$semibold-font-weight;
     padding: 45px 0px 45px 35px;
     background-color: a.$secondary-color;
@@ -62,28 +65,45 @@ body {
 }
 
 .hero-text-con {
-    position: absolute;
+    position: relative;
     top: 0;
-    height: 2000px;
-    font-size: a.$big-font-size;
+    height: 500px;
+    font-size: a.$base-font-size;
     line-height: 28px;
 }
 
 .hero-text-con-1 {
-    position: absolute;
-    height: 2000px;
-    top: 340px;
-    left: 240px;
-    width: 620px;
+    position: relative;
+    height: 20px;
+    top: 70px;
+    left: 0;
+    width: 100%;
 }
 
-.hero-text-con-2 {
-    position: absolute;
-    height: 2000px;
-    top: 490px;
-    left: 450px;
-    width: 600px;
+.hero-text-con-1 p:first-child {
+    margin-top: 60px;
+    margin-left: 50px;
+    margin-right: 20px;
 }
+
+.hero-text-con-1 p:nth-child(2) {
+    margin-top: 60px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.hero-text-con-1 p:last-child {
+    margin-top: 60px;
+    margin-left: 100px;
+    margin-right: 20px;
+}
+
+.hero-text-section .arrow-down {
+    position: relative;
+    top: -530px;
+    margin: 0 auto;
+    padding: 0;
+} 
 
 #work-section {
     background-color: a.$primary-color;
@@ -175,9 +195,86 @@ body {
 @media screen and (min-width: 768px) {
 
     #hero-section {
-        margin: 160px auto;
+        margin: 140px auto 150px;
+        position: relative;
+        height: 380px;
     }
     
+    #name-main {
+        font-size: 220px;
+        font-weight: 700;
+        text-align: center;
+        position: relative;
+        top: -80px;
+        left: auto;
+        background-color: a.$secondary-color;
+        padding: 80px;
+    }
+    
+    #lname-main {
+        font-size: 220px;
+        font-weight: 700;
+        text-align: center;
+        position: relative;
+        top: -80px;
+        background-color: a.$secondary-color;
+        padding: 80px;
+    }
+
+    .slider-con {
+        position: relative;
+        top: -90px;
+        background-color: a.$secondary-color;
+        transform: rotate(-5deg);
+    }
+
+    .slider p {
+        margin: 0px;
+        font-size: 100px;
+        font-weight: a.$semibold-font-weight;
+        padding: 45px 0px 45px 35px;
+        background-color: a.$secondary-color;
+        box-shadow: 40px 20px 40px a.$light-highlight-color;
+    }
+
+    .slider p {
+        margin: 0px;
+        font-size: 60px;
+        font-weight: a.$semibold-font-weight;
+        padding: 45px 0px 45px 35px;
+        background-color: a.$secondary-color;
+        box-shadow: 40px 20px 40px a.$light-highlight-color;
+    }
+
+    .hero-text-con {
+        position: absolute;
+        top: 0;
+        height: 2000px;
+        font-size: a.$big-font-size;
+        line-height: 28px;
+    }
+
+    .hero-text-con-1 p:first-child {
+        margin-top: 60px;
+        margin-left: 100px;
+    }
+    
+    .hero-text-con-1 p:nth-child(2) {
+        margin-top: 60px;
+        margin-left: 0px;
+    }
+    
+    .hero-text-con-1 p:last-child {
+        margin-top: 60px;
+        margin-left: 160px;
+    }
+
+    .hero-text-section .arrow-down {
+        position: inherit;
+        margin: 40px 0;
+        padding: 0;
+    } 
+
     #logo-icon-ca {
         margin: auto;
     }
